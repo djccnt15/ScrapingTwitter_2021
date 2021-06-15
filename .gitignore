@@ -2,6 +2,11 @@
 Include/
 Lib/
 Scripts/
+result/
 
 # files
 test.py
+test.csv
+sample.csv
+result.csv
+pivot.csv
