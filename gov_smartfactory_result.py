@@ -5,7 +5,7 @@ import numpy as np
 year = 2018
 data_list = []
 while True:
-    globals()['result_%s' %year] = pd.read_csv('./scrap_data/scrap_result_%s.csv' %year)
+    globals()['result_%s' %year] = pd.read_csv('./twitter_scrap/scrap_result_%s.csv' %year)
     exec("result_%s = result_%s[['date', 'hashtags','tweet', 'link']]" %(year, year))
     exec('data_list.append(result_%s)' %year)
     year += 1
@@ -17,6 +17,7 @@ df['tweet'] = df['tweet'].str.split(pat='http').str[0]
 # delete useless links at the end of the tweet
 df['tweet'] = df['tweet'] + df['hashtags']
 df = df.drop(['hashtags'], axis=1)
+print(df.describe())
 
 # word replace
 df['tweet'] = df['tweet'].str.replace('스마트 공장', '스마트공장')
@@ -33,6 +34,7 @@ stopwords = [
 ]
 for i in stopwords:
     df = df[~df['tweet'].str.contains(i)]
+print(df.describe())
 
 '''sort dataframe'''
 df = df.sort_values(by=['date'])
