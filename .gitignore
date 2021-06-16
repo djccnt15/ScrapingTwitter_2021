@@ -3,6 +3,7 @@ Include/
 Lib/
 Scripts/
 result/
+report/
 
 # files
 test.py
