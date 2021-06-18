@@ -5,7 +5,7 @@ import numpy as np
 year = 2018
 data_list = []
 while True:
-    globals()['result_%s' %year] = pd.read_csv('./twitter_scrap/scrap_result_%s.csv' %year)
+    globals()['result_%s' %year] = pd.read_csv('./twitter_scrap/gov_smartfactory/encoded_scrap_result_%s.csv' %year)
     exec("result_%s = result_%s[['date', 'hashtags','tweet', 'link']]" %(year, year))
     exec('data_list.append(result_%s)' %year)
     year += 1
