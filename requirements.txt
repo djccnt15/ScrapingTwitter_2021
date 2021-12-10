@@ -28,7 +28,7 @@ requests==2.25.1
 schedule==1.1.0
 six==1.16.0
 soupsieve==2.2.1
-twint==2.1.21
+twint==2.1.20
 typing-extensions==3.10.0.0
 urllib3==1.26.5
 yarl==1.6.3
